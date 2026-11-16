@@ -1,5 +1,5 @@
 /* PDD Test — офлайн кэш. Файлдар өзгерсе, VERSION-ды көтеріңіз. */
-var VERSION='pddtest-v2.1';
+var VERSION='pddtest-v2.2';
 var FILES=[
  "./",
  "./index.html",
