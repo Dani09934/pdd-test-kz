@@ -11,7 +11,7 @@
   });
   // claude.ai ішінде файлды жүктеу тек downloads мүмкіндігі арқылы жұмыс істейді
   document.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('.dlgif');if(!a||!(window.claude&&window.claude.use))return;e.preventDefault();
+    var a=e.target.closest&&e.target.closest('.dlgif,.dlfile');if(!a||!(window.claude&&window.claude.use))return;e.preventDefault();
     window.claude.use('downloads').then(function(d){if(!d){location.href=a.href;return}
       return fetch(a.getAttribute('href')).then(function(r){return r.blob()}).then(function(b){return d.save({filename:a.getAttribute('download'),data:b})});
     }).catch(function(err){if(err&&err.code&&err.code!=='declined')alert('Жүктеу мүмкін болмады: '+err.code)});
