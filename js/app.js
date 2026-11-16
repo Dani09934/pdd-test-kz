@@ -195,7 +195,7 @@ R.settings=function(){
   document.getElementById('s_imp').onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);if(!d||typeof d!=='object'||!d.ans)throw 0;st=d;st.days=st.days||{};st.fav=st.fav||{};st.mis=st.mis||{};st.exams=st.exams||[];st.set=Object.assign({delay:1300,vibrate:true,shuffleOpts:false,examN:D.exam.n,sound:false,font:1,goal:20},st.set||{});applyFont();save();alert('Прогресс жүктелді');R.settings()}catch(e){alert('Файл дұрыс емес')}};r.readAsText(f)};
   document.getElementById('rst').onclick=function(){if(confirm('Барлық прогресс өшіріледі. Жалғастырасыз ба?')){st={ans:{},mis:{},exams:[],fav:{},days:{},set:S};save();R.settings()}};
 };
-function route(){clearInterval(timerId);var h=location.hash.replace(/^#\/?/,'').split(/[-\/]/);var r=h[0]||'home';nav(r==='topic'||r==='marathon'?'topics':r);(R[r]||R.home)(h[1]);window.scrollTo(0,0)}
+function route(){clearInterval(timerId);if(!Q.length){nav('home');V.innerHTML='<h1>PDD Test</h1><div class="card">Бұл ашық нұсқада сұрақтар жоқ. Толық нұсқа жеке сілтемеде және PDD-Test.html файлында.</div>';return}var h=location.hash.replace(/^#\/?/,'').split(/[-\/]/);var r=h[0]||'home';nav(r==='topic'||r==='marathon'?'topics':r);(R[r]||R.home)(h[1]);window.scrollTo(0,0)}
 window.addEventListener('hashchange',route);
 // a link to the current hash does not fire hashchange (e.g. "Шығу"/"Артқа" inside a quiz started from #mistakes, #exam, #home) — re-render explicitly
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&a.getAttribute('href')===location.hash){e.preventDefault();route()}});
