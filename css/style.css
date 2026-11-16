@@ -109,3 +109,10 @@ video.scene{cursor:pointer;background:#000}
 .chart small{color:var(--soft);font-size:.7rem}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 #view h2{margin:22px 0 10px}
+/* ---- v2.1 ---- */
+.cta.alt{background:var(--surface);color:var(--ink);border:1px solid var(--line);margin-top:10px}
+.goal{margin-top:14px}.goal .bar{margin-top:10px}
+.fire{font-weight:700;color:var(--gold)}
+.review{margin-bottom:10px;border-left:4px solid var(--line)}
+.review.r-ok{border-left-color:var(--ok)}.review.r-no{border-left-color:var(--no)}
+.review .ans{margin-top:6px;font-size:.92rem}.review .ans.ok{color:var(--ok)}.review .ans.no{color:var(--no)}
